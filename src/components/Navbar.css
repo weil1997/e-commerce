@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+}
+
+.navbar-container {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  height: 100px;
+}
+
+.menu-items {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between; /* Använd detta för att separera li-elementen jämnt */
+  align-items: center;
+  padding: 0; /* Ta bort dubbel padding */
+  margin: 0;
+  width: 100%; /* Säkerställ att ul tar upp 100% av dess förälders bredd */
+  max-width: 300px; /* Du kan begränsa maxbredden för att hålla menyelementen från att spridas för långt från varandra */
+}
+
+.menu-items li a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  color: #1c1d1d;
+}
+
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
