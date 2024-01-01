@@ -9,7 +9,7 @@ import {
 import "./Navbar.css";
 import LoginForm from "../components/LoginForm";
 
-function Navbar() {
+function Navbar({ toggleSearch }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
