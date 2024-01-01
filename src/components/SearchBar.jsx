@@ -4,7 +4,7 @@ import { useState } from "react";
 function Searchbar() {
   const [showSearch, setShowSearch] = useState(false);
 
-  const toggleButton = () => setShowSearch(!showSearch);
+  const toggleSearch = () => setShowSearch(!showSearch);
 
   return (
     <div>
