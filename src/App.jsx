@@ -4,14 +4,10 @@ import Navbar from "./components/Navbar";
 import Searchbar from "./components/Searchbar";
 
 function App() {
-  const [showSearch, setShowSearch] = useState(false);
-
-  const toggleSearch = () => setShowSearch(!showSearch);
-
   return (
     <div>
-      <Navbar toggleSearch={toggleSearch} />
-      {showSearch && <Searchbar />}
+      <Navbar />
+      <Searchbar />
     </div>
   );
 }

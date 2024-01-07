@@ -1,16 +1,9 @@
 import React from "react";
 import { useState } from "react";
 
-function Searchbar() {
-  const [showSearch, setShowSearch] = useState(false);
-
-  const toggleSearch = () => setShowSearch(!showSearch);
-
+function Searchbar({ showSearch, toggleSearch }) {
   return (
     <div>
-      <button onClick={toggleSearch} className="search-bar">
-        Sök
-      </button>
       {showSearch && (
         <input
           type="text"
@@ -18,6 +11,9 @@ function Searchbar() {
           placeholder="sök i butiken"
         />
       )}
+      <button onClick={toggleSearch} className="Search-bar">
+        Sök
+      </button>
     </div>
   );
 }

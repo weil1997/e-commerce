@@ -8,11 +8,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./Navbar.css";
 import LoginForm from "../components/LoginForm";
+import Searchbar from "./Searchbar";
 
-function Navbar({ toggleSearch }) {
+function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+
+  const toggleSearch = () => setShowSearch(!showSearch);
 
   const handleLoginSuccess = (userData) => {
     setIsModalOpen(false);
@@ -20,15 +24,16 @@ function Navbar({ toggleSearch }) {
     setUser(userData);
   };
 
-  console.log("användaren är inloggad");
-
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
   return (
     <nav className="navbar-container">
-      <h1>ICON. Amsterdam</h1>
+      <div>
+        <h2>Icon</h2>
+        <h2>Amesterdam</h2>
+      </div>
 
       <ul className="menu-items">
         <li>
@@ -46,9 +51,11 @@ function Navbar({ toggleSearch }) {
       </ul>
       <div className="navbar-icons">
         <FontAwesomeIcon icon={faUser} onClick={toggleModal} />
-        <FontAwesomeIcon icon={faSearch} />
+        <FontAwesomeIcon icon={faSearch} onClick={toggleSearch} />
         <FontAwesomeIcon icon={faShoppingCart} />
       </div>
+
+      {showSearch && <Searchbar />}
 
       {isModalOpen && (
         <div className="modal" onClick={() => setIsModalOpen(false)}>
